@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+<body>
+
+<h1 class="heading-title"><a href="/">Add New Image</a></h1>
+
+<form action="{{ url_for('new_image', student_id=student.id)}}" method="post" class="form-styling" enctype='multipart/form-data'>
+    <div class="form-group">
+    <label> Picture </label>
+    <input type="file" class="form-control form-control-sm" name="pic">
+    </div>
+    <div class="form-group">
+    <input type="submit" class="btn btn-outline-success" value="Submit">
+    </div>
+</form>
+</body>
+</html>

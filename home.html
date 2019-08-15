@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scores</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+
+</head>
+<body>
+<h1 class="heading-title"><a href="/newStudent">+ </a>Scoring System <a href="/searchStudent">+</a></h1>
+<div class="flex-container">
+{% for i in range(students|length) %}
+<div class="each_student">
+
+    <a href="{{ url_for('new_image', student_id=students[i].id)}}"><img class="image_item" style="width:70px;align-self:center;" src="{{ url_for('static', filename='img/st/' + students[i].name + students[i].ext) }}" onerror="src='/static/img/st/user_ph.png'"/></a>
+    <div>
+<h6 class="name_item">{{students[i].name}}</h6>
+<h4 class="score_item">Rank: {{i+1}}</h4>
+<h4 class="score_item">Score: {{students[i].score}}</h4>
+        </div>
+</div>
+{% endfor%}
+</div>
+</body>
+</html>

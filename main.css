@@ -1,0 +1,120 @@
+.heading-title{
+    text-align:center;
+    color:#C0392B;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.each_student{
+box-shadow: 0 0 10px 0 rgba(46,60,73,.2);
+ border: 1px solid #dbe2e8;
+ margin:2px;
+ padding:2px;
+ height:70px;
+display:flex;
+}
+
+.name_item {
+margin:0;
+padding:5px;
+text-align:center;
+    color:#C0392B;
+}
+.score_item {
+margin:0;
+padding:5px;
+text-align:center;
+    color:#C0392B;
+}
+.form-styling{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.form-group{
+    text-align:center;
+}
+
+input[type=text], input[type=file] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+a:link {
+  text-decoration: none;
+  color:#C0392B;
+}
+
+a:visited {
+  text-decoration: none;
+  color:#C0392B;
+}
+
+a:hover {
+  text-decoration: none;
+  color:#C0392B;
+}
+
+a:active {
+  text-decoration: none;
+  color:#C0392B;
+}
+
+.form-inline {
+display: flex;
+
+}
+.form-inline > input[type=text] {
+    width: 40%;
+}
+
+.btn:link, .btn:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid #C0392B;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor:pointer;
+  border-radius: 5px;
+}
+
+.btn:hover, .btn:active {
+  background-color: #C0392B;
+  color: white;
+  border-radius: 5px;
+}
+table{
+width:100%;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+.table-form-inline{
+
+}

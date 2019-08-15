@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div style="text-align:center;">{{ message }}</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<h1 class="heading-title"><a href="/">New Student</a></h1>
+
+<form action="{{ url_for('new_student')}}" method="post" class="form-styling" enctype='multipart/form-data'>
+    <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control form-control-sm" name="name">
+    </div>
+    <div class="form-group">
+    <label>Score </label>
+    <input type="text" class="form-control form-control-sm" name="score">
+    </div>
+    <div class="form-group">
+    <label> Picture </label>
+    <input type="file" class="form-control form-control-sm" name="pic">
+    </div>
+    <div class="form-group">
+    <input type="submit" class="btn btn-outline-success" value="Submit">
+    </div>
+</form>
+</body>
+</html>

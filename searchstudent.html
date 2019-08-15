@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search for Student</title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+
+</head>
+<body>
+
+<h1 class="heading-title"><a href="/">Search Student</a></h1>
+
+<form class="form-inline" action="{{ url_for('searchstudent')}}" method="post">
+
+    <input type="text" class="form-control" name="searchName" placeholder="Search"> &nbsp;
+    <input type="submit" class="btn btn-success" value="Search">
+</form>
+<hr>
+{% if students %}
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.score }}</td>
+
+        <td>
+            <form class="table-form-inline" action="{{ url_for('addscore', user_id=student.id)}}" method="post">
+            <input type="text" name="score" placeholder="Add Score">
+                </form>
+        </td>
+        <td><a href="{{ url_for('StDel', user_id=student.id)}}" class="btn confirmation">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endif %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+<script>
+    $('.confirmation').on('click', function () {
+        return confirm('Are You Sure ?');
+    });
+</script>
+
+</body>
+</html>
